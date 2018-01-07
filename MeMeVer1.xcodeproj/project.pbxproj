@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B812A2C5200284FB002F649D /* TopTextFieldDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B812A2C4200284FB002F649D /* TopTextFieldDelegate.swift */; };
+		B812A2C7200289E3002F649D /* BottomTextFieldDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B812A2C6200289E3002F649D /* BottomTextFieldDelegate.swift */; };
+		B812A2C920028E80002F649D /* KeyboardProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = B812A2C820028E80002F649D /* KeyboardProtocol.swift */; };
 		B8214D9E2000C9170078C2B0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8214D9D2000C9170078C2B0 /* AppDelegate.swift */; };
 		B8214DA02000C9170078C2B0 /* MemeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8214D9F2000C9170078C2B0 /* MemeViewController.swift */; };
 		B8214DA32000C9170078C2B0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B8214DA12000C9170078C2B0 /* Main.storyboard */; };
@@ -34,6 +37,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		B812A2C4200284FB002F649D /* TopTextFieldDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopTextFieldDelegate.swift; sourceTree = "<group>"; };
+		B812A2C6200289E3002F649D /* BottomTextFieldDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomTextFieldDelegate.swift; sourceTree = "<group>"; };
+		B812A2C820028E80002F649D /* KeyboardProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = KeyboardProtocol.swift; path = ../../MemeV1/MeMeV1/KeyboardProtocol.swift; sourceTree = "<group>"; };
 		B8214D9A2000C9170078C2B0 /* MeMeVer1.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MeMeVer1.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B8214D9D2000C9170078C2B0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B8214D9F2000C9170078C2B0 /* MemeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemeViewController.swift; sourceTree = "<group>"; };
@@ -74,6 +80,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		B812A2C3200284D1002F649D /* Delegates */ = {
+			isa = PBXGroup;
+			children = (
+				B812A2C4200284FB002F649D /* TopTextFieldDelegate.swift */,
+				B812A2C6200289E3002F649D /* BottomTextFieldDelegate.swift */,
+			);
+			path = Delegates;
+			sourceTree = "<group>";
+		};
 		B8214D912000C9170078C2B0 = {
 			isa = PBXGroup;
 			children = (
@@ -97,6 +112,8 @@
 		B8214D9C2000C9170078C2B0 /* MeMeVer1 */ = {
 			isa = PBXGroup;
 			children = (
+				B812A2C820028E80002F649D /* KeyboardProtocol.swift */,
+				B812A2C3200284D1002F649D /* Delegates */,
 				B8214D9D2000C9170078C2B0 /* AppDelegate.swift */,
 				B8214D9F2000C9170078C2B0 /* MemeViewController.swift */,
 				B8214DA12000C9170078C2B0 /* Main.storyboard */,
@@ -260,7 +277,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				B8214DA02000C9170078C2B0 /* MemeViewController.swift in Sources */,
+				B812A2C7200289E3002F649D /* BottomTextFieldDelegate.swift in Sources */,
 				B8214D9E2000C9170078C2B0 /* AppDelegate.swift in Sources */,
+				B812A2C5200284FB002F649D /* TopTextFieldDelegate.swift in Sources */,
+				B812A2C920028E80002F649D /* KeyboardProtocol.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
