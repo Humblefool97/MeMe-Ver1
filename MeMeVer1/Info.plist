@@ -20,6 +20,14 @@
 	<string>1</string>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
+	<key>NSCameraUsageDescription</key>
+	<string>This app uses camera to generate memes</string>
+	<key>NSContactsUsageDescription</key>
+	<string>This app uses Contacts to generate memes</string>
+	<key>NSPhotoLibraryAddUsageDescription</key>
+	<string>This app uses your Album to generate memes</string>
+	<key>NSPhotoLibraryUsageDescription</key>
+	<string>This app uses your Album to generate memes</string>
 	<key>UILaunchStoryboardName</key>
 	<string>LaunchScreen</string>
 	<key>UIMainStoryboardFile</key>
