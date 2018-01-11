@@ -55,6 +55,7 @@
 		B8214DB92000C9170078C2B0 /* MeMeVer1UITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MeMeVer1UITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		B8214DBD2000C9170078C2B0 /* MeMeVer1UITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeMeVer1UITests.swift; sourceTree = "<group>"; };
 		B8214DBF2000C9170078C2B0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B875BAF82007D64D001BE051 /* KeyboardProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardProtocol.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -114,6 +115,7 @@
 		B8214D9C2000C9170078C2B0 /* MeMeVer1 */ = {
 			isa = PBXGroup;
 			children = (
+				B875BAF72007D63E001BE051 /* Protocols */,
 				B812A2C820028E80002F649D /* KeyboardProtocol.swift */,
 				B812A2C3200284D1002F649D /* Delegates */,
 				B8214D9D2000C9170078C2B0 /* AppDelegate.swift */,
@@ -143,6 +145,14 @@
 				B8214DBF2000C9170078C2B0 /* Info.plist */,
 			);
 			path = MeMeVer1UITests;
+			sourceTree = "<group>";
+		};
+		B875BAF72007D63E001BE051 /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				B875BAF82007D64D001BE051 /* KeyboardProtocol.swift */,
+			);
+			path = Protocols;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
