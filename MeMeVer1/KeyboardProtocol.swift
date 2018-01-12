@@ -10,5 +10,6 @@ import Foundation
 
 protocol KeyboardProtocol {
     func liftView(_ notification:Notification)
-   func  deLiftView(_ notification:Notification)
+    func  deLiftView(_ notification:Notification)
 }
+
