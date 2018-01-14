@@ -9,7 +9,7 @@
 import UIKit
 
 class MemeViewController: UIViewController,UIImagePickerControllerDelegate,UINavigationControllerDelegate,KeyboardProtocol {
-    
+    //MARK:Member Variables
     @IBOutlet weak var cameraButton: UIBarButtonItem!
     @IBOutlet weak var imageView: UIImageView!
     @IBOutlet weak var topTextField: UITextField!
@@ -23,14 +23,21 @@ class MemeViewController: UIViewController,UIImagePickerControllerDelegate,UINav
     @IBOutlet weak var cancelButton: UIBarButtonItem!
     
     let memeTextAttributes:[String:Any] = [
-        NSAttributedStringKey.strokeColor.rawValue:UIColor.clear,
+        NSAttributedStringKey.strokeColor.rawValue:UIColor.black,
         NSAttributedStringKey.foregroundColor.rawValue:UIColor.white,
         NSAttributedStringKey.font.rawValue: UIFont(name: "HelveticaNeue-CondensedBlack", size: 40)!,
         NSAttributedStringKey.strokeWidth.rawValue:-3.0]
     
+    //MARK:Member functions
+    fileprivate func prepareDefaultText(textField: UITextField, defaultText: String) {
+        textField.text = defaultText
+    }
+    
     fileprivate func initTextFields() {
-        topTextField.text = "TOP"
-        bottomTextField.text = "BOTTOM"
+        prepareDefaultText(textField: topTextField,defaultText: "TOP")
+        prepareDefaultText(textField: bottomTextField,defaultText: "BOTTOM")
+        topTextField.backgroundColor = UIColor.clear
+        bottomTextField.backgroundColor = UIColor.clear
         topTextField.defaultTextAttributes = memeTextAttributes
         bottomTextField.defaultTextAttributes = memeTextAttributes
         topTextField.textAlignment = .center
@@ -50,19 +57,19 @@ class MemeViewController: UIViewController,UIImagePickerControllerDelegate,UINav
     }
     
     @IBAction func onAlbumClicked(_ sender: Any) {
-        let uiImagePickerController = UIImagePickerController()
-        uiImagePickerController.delegate = self
-        uiImagePickerController.sourceType = .photoLibrary
-        present(uiImagePickerController, animated: true, completion: nil)
+        pick(sourceType: .photoLibrary)
     }
     
     @IBAction func onCameraClicked(_ sender: Any) {
-        let uiImagePickerController = UIImagePickerController()
-        uiImagePickerController.delegate = self
-        uiImagePickerController.sourceType = .camera
-        present(uiImagePickerController, animated: true, completion: nil)
+        pick(sourceType: .camera)
     }
     
+    func pick(sourceType:UIImagePickerControllerSourceType){
+        let uiImagePickerController = UIImagePickerController()
+        uiImagePickerController.delegate = self
+        uiImagePickerController.sourceType = sourceType
+        present(uiImagePickerController, animated: true, completion: nil)
+    }
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
         if let image = info["UIImagePickerControllerOriginalImage"] as? UIImage{
             imageView.image = image
@@ -117,9 +124,12 @@ class MemeViewController: UIViewController,UIImagePickerControllerDelegate,UINav
     @IBAction func onShare(_ sender: Any) {
         let image:UIImage = generateMemedImage()
         let controller = UIActivityViewController(activityItems: [image], applicationActivities: nil)
-        self.present(controller, animated: true, completion:{
-            self.save()
-        })
+        controller.completionWithItemsHandler = {(activity, completed, items, error) in
+            if(completed){
+                self.save()
+            }
+        }
+        self.present(controller, animated: true, completion: nil)
     }
     @IBAction func onCancel(_ sender: Any) {
         if self.imageView.image != nil{
@@ -132,10 +142,6 @@ class MemeViewController: UIViewController,UIImagePickerControllerDelegate,UINav
     }
     
     func setView(view: UIView, hidden: Bool) {
-        //        UIView.transition(with: view, duration: 0.5
-        //            , options: .transitionCrossDissolve, animations: {
-        //            view.isHidden = hidden
-        //        }, completion: nil)
         view.isHidden = hidden
         
     }
